@@ -1,0 +1,2732 @@
+<!DOCTYPE html>  <html lang="en">  
+<head>  
+  <meta charset="UTF-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <meta name="theme-color" content="#05070d">  
+  <meta name="description" content="Developers For ED — Learn programming, build technology, and empower Zimbabwe through innovation.">  
+  <title>Developers For ED | Vision 2030</title>    <link rel="preconnect" href="https://fonts.googleapis.com">  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">    <!-- Font Awesome real icons -->    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">    <style>  
+    :root {  
+      --black: #05070d;  
+      --black-2: #080c15;  
+      --card: #0d1422;  
+.      --card-2: #111b2d;  
+      --yellow: #ffd600;  
+      --blue: #1464ff;  
+      --cyan: #00d9ff;  
+      --white: #ffffff;  
+      --text: #e8edf7;  
+      --muted: #91a0b8;  
+      --border: rgba(255,255,255,0.09);  
+      --success: #25d366;  
+    }  
+  
+    * {  
+      margin: 0;  
+      padding: 0;  
+      box-sizing: border-box;  
+      scroll-behavior: smooth;  
+    }  
+  
+    body {  
+      font-family: "Inter", sans-serif;  
+      background: var(--black);  
+      color: var(--text);  
+      line-height: 1.6;  
+      overflow-x: hidden;  
+    }  
+  
+    a {  
+      text-decoration: none;  
+      color: inherit;  
+    }  
+  
+    button {  
+      font-family: inherit;  
+      cursor: pointer;  
+    }  
+  
+    .container {  
+      width: min(1180px, 92%);  
+      margin: auto;  
+    }  
+  
+    .glow {  
+      position: fixed;  
+      width: 450px;  
+      height: 450px;  
+      border-radius: 50%;  
+      filter: blur(130px);  
+      opacity: 0.12;  
+      pointer-events: none;  
+      z-index: -1;  
+    }  
+  
+    .glow-1 {  
+      background: var(--blue);  
+      top: 100px;  
+      left: -200px;  
+    }  
+  
+    .glow-2 {  
+      background: var(--yellow);  
+      right: -200px;  
+      top: 650px;  
+    }  
+  
+    header {  
+      position: fixed;  
+      top: 0;  
+      left: 0;  
+      width: 100%;  
+      z-index: 1000;  
+      background: rgba(5,7,13,0.92);  
+      backdrop-filter: blur(18px);  
+      border-bottom: 1px solid var(--border);  
+    }  
+  
+    .navbar {  
+      min-height: 78px;  
+      display: flex;  
+      align-items: center;  
+      justify-content: space-between;  
+      gap: 20px;  
+    }  
+  
+    .brand {  
+      display: flex;  
+      align-items: center;  
+      gap: 12px;  
+      flex-shrink: 0;  
+    }  
+  
+    .brand img {  
+      width: 48px;  
+      height: 48px;  
+      object-fit: contain;  
+      border-radius: 50%;  
+    }  
+  
+    .brand-text {  
+      font-family: "Space Grotesk", sans-serif;  
+      font-weight: 800;  
+      font-size: 15px;  
+      line-height: 1.1;  
+      color: white;  
+    }  
+  
+    .brand-text span {  
+      display: block;  
+      color: var(--yellow);  
+      font-size: 10px;  
+      letter-spacing: 2px;  
+      margin-top: 4px;  
+    }  
+  
+    .nav-links {  
+      display: flex;  
+      align-items: center;  
+      justify-content: flex-end;  
+      gap: 20px;  
+      list-style: none;  
+    }  
+  
+    .nav-links a {  
+      color: #b8c3d5;  
+      font-size: 12px;  
+      font-weight: 600;  
+      transition: 0.3s;  
+    }  
+  
+    .nav-links a:hover {  
+      color: var(--yellow);  
+    }  
+  
+    .nav-cta {  
+      background: var(--yellow);  
+      color: #080a10 !important;  
+      padding: 11px 18px;  
+      border-radius: 8px;  
+      font-weight: 800 !important;  
+    }  
+  
+    .nav-cta:hover {  
+      background: white;  
+    }  
+  
+    /* Navigation social icons */  
+    .nav-socials {  
+      display: flex;  
+      align-items: center;  
+      gap: 8px;  
+      margin-left: 4px;  
+    }  
+  
+    .nav-socials a {  
+      width: 32px;  
+      height: 32px;  
+      display: inline-flex;  
+      align-items: center;  
+      justify-content: center;  
+      border: 1px solid rgba(255,214,0,0.35);  
+      border-radius: 50%;  
+      color: var(--yellow);  
+      background: rgba(255,214,0,0.04);  
+      font-size: 13px;  
+      transition: all 0.3s ease;  
+    }  
+  
+    .nav-socials a:hover {  
+      color: #05070d;  
+      background: var(--yellow);  
+      border-color: var(--yellow);  
+      transform: translateY(-3px);  
+    }  
+  
+    .nav-socials a.facebook:hover {  
+      background: #1877f2;  
+      border-color: #1877f2;  
+      color: white;  
+    }  
+  
+    .nav-socials a.whatsapp:hover {  
+      background: #25d366;  
+      border-color: #25d366;  
+      color: white;  
+    }  
+  
+    .nav-socials a.instagram:hover {  
+      background: #e4405f;  
+      border-color: #e4405f;  
+      color: white;  
+    }  
+  
+    .nav-socials a.youtube:hover {  
+      background: #ff0000;  
+      border-color: #ff0000;  
+      color: white;  
+    }  
+  
+    .nav-socials a.tiktok:hover {  
+      background: #ffffff;  
+      border-color: #ffffff;  
+      color: #05070d;  
+    }  
+  
+    .menu-btn {  
+      display: none;  
+      background: none;  
+      border: none;  
+      color: white;  
+      font-size: 24px;  
+    }  
+  
+    .hero {  
+      min-height: 100vh;  
+      padding: 145px 0 90px;  
+      display: flex;  
+      align-items: center;  
+      position: relative;  
+      overflow: hidden;  
+    }  
+  
+    .hero-grid {  
+      display: grid;  
+      grid-template-columns: 1.05fr 0.95fr;  
+      gap: 55px;  
+      align-items: center;  
+    }  
+  
+    .eyebrow {  
+      display: inline-flex;  
+      align-items: center;  
+      gap: 9px;  
+      color: var(--yellow);  
+      border: 1px solid rgba(255,214,0,0.25);  
+      background: rgba(255,214,0,0.06);  
+      padding: 8px 13px;  
+      border-radius: 30px;  
+      font-size: 11px;  
+      font-weight: 800;  
+      letter-spacing: 1.5px;  
+      text-transform: uppercase;  
+      margin-bottom: 22px;  
+    }  
+  
+    .eyebrow i {  
+      color: var(--cyan);  
+    }  
+  
+    .hero h1 {  
+      font-family: "Space Grotesk", sans-serif;  
+      font-size: clamp(42px, 5.2vw, 72px);  
+      line-height: 1.04;  
+      letter-spacing: -2.5px;  
+      font-weight: 800;  
+      margin-bottom: 25px;  
+    }  
+  
+    .hero h1 .yellow {  
+      color: var(--yellow);  
+    }  
+  
+    .hero h1 .blue {  
+      color: var(--cyan);  
+    }  
+  
+    .hero p {  
+      max-width: 550px;  
+      color: var(--muted);  
+      font-size: 16px;  
+      line-height: 1.9;  
+      margin-bottom: 32px;  
+    }  
+  
+    .hero-buttons {  
+      display: flex;  
+      flex-wrap: wrap;  
+      gap: 13px;  
+    }  
+  
+    .btn {  
+      display: inline-flex;  
+      align-items: center;  
+      justify-content: center;  
+      gap: 10px;  
+      padding: 14px 23px;  
+      border-radius: 9px;  
+      font-size: 13px;  
+      font-weight: 800;  
+      border: 1px solid transparent;  
+      transition: 0.3s;  
+    }  
+  
+    .btn-primary {  
+      background: var(--yellow);  
+      color: #070a10;  
+    }  
+  
+    .btn-primary:hover {  
+      background: white;  
+      transform: translateY(-3px);  
+    }  
+  
+    .btn-outline {  
+      border-color: rgba(0,217,255,0.35);  
+      color: var(--cyan);  
+      background: rgba(0,217,255,0.04);  
+    }  
+  
+    .btn-outline:hover {  
+      background: var(--cyan);  
+      color: #041018;  
+      transform: translateY(-3px);  
+    }  
+  
+    .hero-stats {  
+      display: flex;  
+      flex-wrap: wrap;  
+      gap: 30px;  
+      margin-top: 40px;  
+    }  
+  
+    .stat strong {  
+      display: block;  
+      font-family: "Space Grotesk", sans-serif;  
+      font-size: 24px;  
+      color: white;  
+    }  
+  
+    .stat span {  
+      font-size: 11px;  
+      color: var(--muted);  
+      text-transform: uppercase;  
+      letter-spacing: 1px;  
+    }  
+  
+    .hero-visual {  
+      position: relative;  
+      display: flex;  
+      justify-content: center;  
+      align-items: center;  
+    }  
+  
+    .hero-visual::before {  
+      content: "";  
+      position: absolute;  
+      width: 90%;  
+      height: 90%;  
+      border-radius: 50%;  
+      background: var(--blue);  
+      filter: blur(80px);  
+      opacity: 0.14;  
+    }  
+  
+    .logo-frame {  
+      position: relative;  
+      width: min(450px, 100%);  
+      aspect-ratio: 1;  
+      padding: 10px;  
+      border-radius: 50%;  
+      background: linear-gradient(  
+        145deg,  
+        rgba(255,214,0,0.8),  
+        rgba(20,100,255,0.8),  
+        rgba(0,217,255,0.8)  
+      );  
+      box-shadow: 0 0 80px rgba(20,100,255,0.18);  
+      animation: float 5s ease-in-out infinite;  
+    }  
+  
+    .logo-frame::before {  
+      content: "";  
+      position: absolute;  
+      inset: 3px;  
+      border-radius: 50%;  
+      background: #05070d;  
+    }  
+  
+    .logo-frame img {  
+      position: relative;  
+      z-index: 1;  
+      width: 100%;  
+      height: 100%;  
+      object-fit: contain;  
+      border-radius: 50%;  
+    }  
+  
+    .floating-card {  
+      position: absolute;  
+      display: flex;  
+      align-items: center;  
+      gap: 12px;  
+      background: rgba(13,20,34,0.95);  
+      border: 1px solid var(--border);  
+      border-radius: 12px;  
+      padding: 14px 17px;  
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3);  
+      backdrop-filter: blur(15px);  
+      font-size: 12px;  
+      font-weight: 700;  
+    }  
+  
+    .floating-card i {  
+      font-size: 20px;  
+      color: var(--yellow);  
+    }  
+  
+    .floating-card small {  
+      display: block;  
+      color: var(--muted);  
+      font-weight: 400;  
+      font-size: 10px;  
+      margin-top: 2px;  
+    }  
+  
+    .float-one {  
+      top: 12%;  
+      left: -20px;  
+    }  
+  
+    .float-two {  
+      bottom: 12%;  
+      right: -20px;  
+    }  
+  
+    @keyframes float {  
+      0%, 100% {  
+        transform: translateY(0);  
+      }  
+  
+      50% {  
+        transform: translateY(-12px);  
+      }  
+    }  
+  
+    section {  
+      padding: 100px 0;  
+    }  
+  
+    .section-heading {  
+      text-align: center;  
+      max-width: 700px;  
+      margin: 0 auto 50px;  
+    }  
+  
+    .section-tag {  
+      display: inline-block;  
+      color: var(--yellow);  
+      font-size: 11px;  
+      font-weight: 800;  
+      letter-spacing: 2px;  
+      text-transform: uppercase;  
+      margin-bottom: 13px;  
+    }  
+  
+    .section-heading h2 {  
+      font-family: "Space Grotesk", sans-serif;  
+      font-size: clamp(28px, 4vw, 43px);  
+      line-height: 1.15;  
+      color: white;  
+      margin-bottom: 16px;  
+      letter-spacing: -1px;  
+    }  
+  
+    .section-heading h2 span {  
+      color: var(--yellow);  
+    }  
+  
+    .section-heading p {  
+      color: var(--muted);  
+      font-size: 14px;  
+    }  
+  
+    .mission {  
+      border-top: 1px solid var(--border);  
+      border-bottom: 1px solid var(--border);  
+      background: linear-gradient(  
+        90deg,  
+        rgba(20,100,255,0.03),  
+        rgba(255,214,0,0.03)  
+      );  
+    }  
+  
+    .mission-grid {  
+      display: grid;  
+      grid-template-columns: repeat(3, 1fr);  
+      gap: 20px;  
+    }  
+  
+    .mission-card {  
+      padding: 30px 25px;  
+      border: 1px solid var(--border);  
+      background: rgba(13,20,34,0.65);  
+      border-radius: 14px;  
+      transition: 0.3s;  
+    }  
+  
+    .mission-card:hover {  
+      border-color: rgba(0,217,255,0.35);  
+      transform: translateY(-5px);  
+    }  
+  
+    .mission-icon {  
+      width: 48px;  
+      height: 48px;  
+      display: grid;  
+      place-items: center;  
+      border-radius: 12px;  
+      background: rgba(255,214,0,0.1);  
+      color: var(--yellow);  
+      font-size: 21px;  
+      margin-bottom: 20px;  
+    }  
+  
+    .mission-card:nth-child(2) .mission-icon {  
+      background: rgba(20,100,255,0.12);  
+      color: var(--cyan);  
+    }  
+  
+    .mission-card:nth-child(3) .mission-icon {  
+      background: rgba(0,217,255,0.1);  
+      color: var(--cyan);  
+    }  
+  
+    .mission-card h3 {  
+      font-family: "Space Grotesk", sans-serif;  
+      color: white;  
+      font-size: 18px;  
+      margin-bottom: 10px;  
+    }  
+  
+    .mission-card p {  
+      color: var(--muted);  
+      font-size: 13px;  
+      line-height: 1.8;  
+    }  
+  
+    .learning {  
+      background: #070a11;  
+    }  
+  
+    .course-filter {  
+      display: flex;  
+      justify-content: center;  
+      flex-wrap: wrap;  
+      gap: 10px;  
+      margin-bottom: 35px;  
+    }  
+  
+    .filter-btn {  
+      border: 1px solid var(--border);  
+      background: var(--card);  
+      color: var(--muted);  
+      padding: 10px 17px;  
+      border-radius: 30px;  
+      font-size: 12px;  
+      font-weight: 700;  
+      transition: 0.3s;  
+    }  
+  
+    .filter-btn.active,  
+    .filter-btn:hover {  
+      background: var(--yellow);  
+      border-color: var(--yellow);  
+      color: #080a10;  
+    }  
+  
+    .courses-grid {  
+      display: grid;  
+      grid-template-columns: repeat(3, 1fr);  
+      gap: 20px;  
+    }  
+  
+    .course-card {  
+      background: var(--card);  
+      border: 1px solid var(--border);  
+      border-radius: 15px;  
+      overflow: hidden;  
+      transition: 0.35s;  
+      display: flex;  
+      flex-direction: column;  
+    }  
+  
+    .course-card:hover {  
+      transform: translateY(-7px);  
+      border-color: rgba(255,214,0,0.35);  
+      box-shadow: 0 18px 50px rgba(0,0,0,0.2);  
+    }  
+  
+    .course-top {  
+      height: 120px;  
+      display: flex;  
+      align-items: center;  
+      justify-content: space-between;  
+      padding: 25px;  
+      background: linear-gradient(  
+        135deg,  
+        rgba(20,100,255,0.2),  
+        rgba(0,217,255,0.04)  
+      );  
+    }  
+  
+    .course-top i {  
+      font-size: 42px;  
+      color: var(--cyan);  
+    }  
+  
+    .course-card:nth-child(2) .course-top {  
+      background: linear-gradient(  
+        135deg,  
+        rgba(255,214,0,0.17),  
+        rgba(255,120,0,0.03)  
+      );  
+    }  
+  
+    .course-card:nth-child(2) .course-top i {  
+      color: var(--yellow);  
+    }  
+  
+    .course-card:nth-child(3) .course-top {  
+      background: linear-gradient(  
+        135deg,  
+        rgba(0,217,255,0.16),  
+        rgba(20,100,255,0.03)  
+      );  
+    }  
+  
+    .course-level {  
+      font-size: 10px;  
+      font-weight: 800;  
+      letter-spacing: 1px;  
+      color: var(--muted);  
+      text-transform: uppercase;  
+      border: 1px solid var(--border);  
+      padding: 6px 9px;  
+      border-radius: 20px;  
+    }  
+  
+    .course-body {  
+      padding: 24px;  
+      display: flex;  
+      flex-direction: column;  
+      flex: 1;  
+    }  
+  
+    .course-body h3 {  
+      font-family: "Space Grotesk", sans-serif;  
+      color: white;  
+      font-size: 20px;  
+      margin-bottom: 10px;  
+    }  
+  
+    .course-body p {  
+      color: var(--muted);  
+      font-size: 13px;  
+      line-height: 1.8;  
+      margin-bottom: 22px;  
+    }  
+  
+    .course-meta {  
+      display: flex;  
+      gap: 15px;  
+      color: #75849b;  
+      font-size: 11px;  
+      margin-bottom: 22px;  
+      flex-wrap: wrap;  
+    }  
+  
+    .course-meta i {  
+      color: var(--yellow);  
+      margin-right: 5px;  
+    }  
+  
+    .course-link {  
+      margin-top: auto;  
+      color: var(--cyan);  
+      font-size: 12px;  
+      font-weight: 800;  
+      display: inline-flex;  
+      align-items: center;  
+      gap: 8px;  
+      transition: 0.3s;  
+    }  
+  
+    .course-link:hover {  
+      gap: 14px;  
+      color: var(--yellow);  
+    }  
+  
+    .course-card.hidden,  
+    .resource-card.hidden {  
+      display: none;  
+    }  
+  
+    .roadmap {  
+      background: var(--black);  
+    }  
+  
+    .roadmap-wrapper {  
+      max-width: 900px;  
+      margin: auto;  
+      position: relative;  
+    }  
+  
+    .roadmap-wrapper::before {  
+      content: "";  
+      position: absolute;  
+      left: 25px;  
+      top: 15px;  
+      bottom: 15px;  
+      width: 2px;  
+      background: linear-gradient(  
+        var(--yellow),  
+        var(--blue),  
+        var(--cyan)  
+      );  
+      opacity: 0.6;  
+    }  
+  
+    .roadmap-item {  
+      display: flex;  
+      gap: 25px;  
+      position: relative;  
+      margin-bottom: 25px;  
+    }  
+  
+    .roadmap-number {  
+      width: 52px;  
+      height: 52px;  
+      flex-shrink: 0;  
+      display: grid;  
+      place-items: center;  
+      border-radius: 50%;  
+      background: var(--black);  
+      border: 2px solid var(--yellow);  
+      color: var(--yellow);  
+      font-family: "Space Grotesk", sans-serif;  
+      font-weight: 800;  
+      z-index: 1;  
+    }  
+  
+    .roadmap-item:nth-child(2) .roadmap-number {  
+      border-color: var(--blue);  
+      color: var(--cyan);  
+    }  
+  
+    .roadmap-item:nth-child(3) .roadmap-number {  
+      border-color: var(--cyan);  
+      color: var(--cyan);  
+    }  
+  
+    .roadmap-content {  
+      flex: 1;  
+      padding: 23px 25px;  
+      border: 1px solid var(--border);  
+      border-radius: 13px;  
+      background: var(--card);  
+    }  
+  
+    .roadmap-content h3 {  
+      color: white;  
+      font-family: "Space Grotesk", sans-serif;  
+      font-size: 18px;  
+      margin-bottom: 7px;  
+    }  
+  
+    .roadmap-content p {  
+      color: var(--muted);  
+      font-size: 13px;  
+    }  
+  
+    .roadmap-tags {  
+      display: flex;  
+      flex-wrap: wrap;  
+      gap: 7px;  
+      margin-top: 14px;  
+    }  
+  
+    .roadmap-tags span {  
+      color: var(--cyan);  
+      background: rgba(0,217,255,0.07);  
+      border: 1px solid rgba(0,217,255,0.15);  
+      padding: 5px 9px;  
+      border-radius: 5px;  
+      font-size: 10px;  
+      font-weight: 700;  
+    }  
+  
+    .resources {  
+      background: #070a11;  
+    }  
+  
+    .resource-tools {  
+      display: flex;  
+      justify-content: center;  
+      align-items: center;  
+      gap: 12px;  
+      flex-wrap: wrap;  
+      margin-bottom: 35px;  
+    }  
+  
+    .resource-search {  
+      width: min(440px, 100%);  
+      position: relative;  
+    }  
+  
+    .resource-search i {  
+      position: absolute;  
+      left: 16px;  
+      top: 50%;  
+      transform: translateY(-50%);  
+      color: var(--cyan);  
+    }  
+  
+    .resource-search input {  
+      width: 100%;  
+      padding: 14px 18px 14px 45px;  
+      background: var(--card);  
+      color: white;  
+      border: 1px solid var(--border);  
+      border-radius: 10px;  
+      outline: none;  
+      font-family: inherit;  
+      font-size: 13px;  
+    }  
+  
+    .resource-search input:focus {  
+      border-color: var(--cyan);  
+      box-shadow: 0 0 0 3px rgba(0,217,255,0.08);  
+    }  
+  
+    .resources-grid {  
+      display: grid;  
+      grid-template-columns: repeat(4, 1fr);  
+      gap: 18px;  
+    }  
+  
+    .resource-card {  
+      display: flex;  
+      flex-direction: column;  
+      align-items: center;  
+      text-align: center;  
+      min-height: 285px;  
+      padding: 28px 20px;  
+      border: 1px solid var(--border);  
+      background: var(--card);  
+      border-radius: 15px;  
+      transition: 0.3s;  
+    }  
+  
+    .resource-card:hover {  
+      transform: translateY(-7px);  
+      border-color: rgba(0,217,255,0.35);  
+      box-shadow: 0 18px 45px rgba(0,0,0,0.2);  
+    }  
+  
+    .resource-card i {  
+      font-size: 34px;  
+      color: var(--yellow);  
+      margin-bottom: 17px;  
+      transition: 0.3s;  
+    }  
+  
+    .resource-card:hover i {  
+      transform: scale(1.12);  
+    }  
+  
+    .resource-card:nth-child(3n) i {  
+      color: var(--cyan);  
+    }  
+  
+    .resource-card:nth-child(3n + 2) i {  
+      color: var(--blue);  
+    }  
+  
+    .resource-card h3 {  
+      color: white;  
+      font-family: "Space Grotesk", sans-serif;  
+      font-size: 17px;  
+      margin-bottom: 9px;  
+    }  
+  
+    .resource-card p {  
+      color: var(--muted);  
+      font-size: 12px;  
+      line-height: 1.8;  
+      margin-bottom: 20px;  
+    }  
+  
+    .resource-card .course-link {  
+      margin-top: auto;  
+      padding-top: 15px;  
+    }  
+  
+    .resource-empty {  
+      display: none;  
+      text-align: center;  
+      color: var(--muted);  
+      padding: 35px 0;  
+      font-size: 14px;  
+    }  
+  
+    .social {  
+      position: relative;  
+      overflow: hidden;  
+    }  
+  
+    .social-box {  
+      border: 1px solid rgba(255,214,0,0.22);  
+      border-radius: 22px;  
+      padding: 65px 30px;  
+      text-align: center;  
+      background:  
+        radial-gradient(circle at 50% 0%, rgba(255,214,0,0.1), transparent 45%),  
+        linear-gradient(  
+          135deg,  
+          rgba(20,100,255,0.05),  
+          rgba(0,217,255,0.04)  
+        );  
+    }  
+  
+    .social-box h2 {  
+      font-family: "Space Grotesk", sans-serif;  
+      font-size: clamp(27px, 4vw, 42px);  
+      color: white;  
+      margin-bottom: 13px;  
+    }  
+  
+    .social-box h2 span {  
+      color: var(--yellow);  
+    }  
+  
+    .social-box p {  
+      color: var(--muted);  
+      max-width: 580px;  
+      margin: 0 auto 32px;  
+      font-size: 14px;  
+    }  
+  
+    .social-links {  
+      display: flex;  
+      justify-content: center;  
+      flex-wrap: wrap;  
+      gap: 13px;  
+    }  
+  
+    .social-link {  
+      display: inline-flex;  
+      align-items: center;  
+      gap: 10px;  
+      padding: 13px 18px;  
+      border-radius: 9px;  
+      background: var(--card);  
+      border: 1px solid var(--border);  
+      color: white;  
+      font-size: 12px;  
+      font-weight: 700;  
+      transition: 0.3s;  
+    }  
+  
+    .social-link i {  
+      font-size: 18px;  
+    }  
+  
+    .social-link:hover {  
+      transform: translateY(-4px);  
+      border-color: var(--yellow);  
+      color: var(--yellow);  
+    }  
+  
+    .social-link.facebook i {  
+      color: #1877f2;  
+    }  
+  
+    .social-link.whatsapp i {  
+      color: #25d366;  
+    }  
+  
+    .social-link.instagram i {  
+      color: #e4405f;  
+    }  
+  
+    .social-link.youtube i {  
+      color: #ff0000;  
+    }  
+  
+    .social-link.tiktok i {  
+      color: #ffffff;  
+    }  
+  
+    footer {  
+      border-top: 1px solid var(--border);  
+      background: #03050a;  
+      padding: 45px 0 25px;  
+    }  
+  
+    .footer-top {  
+      display: flex;  
+      align-items: center;  
+      justify-content: space-between;  
+      gap: 30px;  
+      padding-bottom: 30px;  
+    }  
+  
+    .footer-brand {  
+      display: flex;  
+      align-items: center;  
+      gap: 13px;  
+    }  
+  
+    .footer-brand img {  
+      width: 55px;  
+      height: 55px;  
+      border-radius: 50%;  
+      object-fit: contain;  
+    }  
+  
+    .footer-brand h3 {  
+      color: white;  
+      font-family: "Space Grotesk", sans-serif;  
+      font-size: 18px;  
+    }  
+  
+    .footer-brand p {  
+      color: var(--yellow);  
+      font-size: 10px;  
+      letter-spacing: 1.5px;  
+      margin-top: 4px;  
+    }  
+  
+    .footer-links {  
+      display: flex;  
+      flex-wrap: wrap;  
+      gap: 22px;  
+      color: var(--muted);  
+      font-size: 12px;  
+    }  
+  
+    .footer-links a:hover {  
+      color: var(--yellow);  
+    }  
+  
+    /* Footer social icons */  
+    .footer-socials {  
+      display: flex;  
+      align-items: center;  
+      justify-content: center;  
+      gap: 10px;  
+      margin: 5px 0 25px;  
+    }  
+  
+    .footer-socials a {  
+      width: 38px;  
+      height: 38px;  
+      display: inline-flex;  
+      align-items: center;  
+      justify-content: center;  
+      border: 1px solid rgba(255,214,0,0.4);  
+      border-radius: 50%;  
+      color: var(--yellow);  
+      background: rgba(255,214,0,0.04);  
+      font-size: 15px;  
+      transition: all 0.3s ease;  
+    }  
+  
+    .footer-socials a:hover {  
+      color: #05070d;  
+      background: var(--yellow);  
+      border-color: var(--yellow);  
+      transform: translateY(-4px);  
+    }  
+  
+    .footer-socials a.facebook:hover {  
+      background: #1877f2;  
+      border-color: #1877f2;  
+      color: white;  
+    }  
+  
+    .footer-socials a.whatsapp:hover {  
+      background: #25d366;  
+      border-color: #25d366;  
+      color: white;  
+    }  
+  
+    .footer-socials a.instagram:hover {  
+      background: #e4405f;  
+      border-color: #e4405f;  
+      color: white;  
+    }  
+  
+    .footer-socials a.youtube:hover {  
+      background: #ff0000;  
+      border-color: #ff0000;  
+      color: white;  
+    }  
+  
+    .footer-socials a.tiktok:hover {  
+      background: white;  
+      border-color: white;  
+      color: #05070d;  
+    }  
+  
+    .footer-bottom {  
+      border-top: 1px solid var(--border);  
+      padding-top: 22px;  
+      display: flex;  
+      align-items: center;  
+      justify-content: space-between;  
+      gap: 15px;  
+      flex-wrap: wrap;  
+      color: #65738a;  
+      font-size: 11px;  
+    }  
+  
+    .developer-credit {  
+      color: var(--yellow);  
+      font-weight: 800;  
+    }  
+  
+    .back-top {  
+      width: 35px;  
+      height: 35px;  
+      display: grid;  
+      place-items: center;  
+      border: 1px solid var(--border);  
+      border-radius: 8px;  
+      color: var(--yellow);  
+    }  
+  
+    .reveal {  
+      opacity: 0;  
+      transform: translateY(25px);  
+      transition: 0.7s ease;  
+    }  
+  
+    .reveal.show {  
+      opacity: 1;  
+      transform: translateY(0);  
+    }  
+  
+    @media (max-width: 1150px) {  
+      .nav-links {  
+        gap: 13px;  
+      }  
+  
+      .nav-socials {  
+        gap: 5px;  
+      }  
+  
+      .nav-socials a {  
+        width: 29px;  
+        height: 29px;  
+        font-size: 12px;  
+      }  
+    }  
+  
+    @media (max-width: 1050px) {  
+      .nav-links {  
+        gap: 15px;  
+      }  
+  
+      .resources-grid {  
+        grid-template-columns: repeat(3, 1fr);  
+      }  
+    }  
+  
+    @media (max-width: 950px) {  
+      .hero-grid {  
+        grid-template-columns: 1fr;  
+        text-align: center;  
+        gap: 45px;  
+      }  
+  
+      .hero p {  
+        margin-left: auto;  
+        margin-right: auto;  
+      }  
+  
+      .hero-buttons,  
+      .hero-stats {  
+        justify-content: center;  
+      }  
+  
+      .hero-visual {  
+        max-width: 500px;  
+        width: 100%;  
+        margin: auto;  
+      }  
+  
+      .courses-grid {  
+        grid-template-columns: repeat(2, 1fr);  
+      }  
+  
+      .float-one {  
+        left: 0;  
+      }  
+  
+      .float-two {  
+        right: 0;  
+      }  
+    }  
+  
+    @media (max-width: 700px) {  
+      .navbar {  
+        min-height: 70px;  
+      }  
+  
+      .menu-btn {  
+        display: block;  
+      }  
+  
+      .nav-links {  
+        position: absolute;  
+        top: 70px;  
+        left: 0;  
+        width: 100%;  
+        display: none;  
+        flex-direction: column;  
+        align-items: stretch;  
+        gap: 0;  
+        padding: 10px 5%;  
+        background: rgba(5,7,13,0.98);  
+        border-bottom: 1px solid var(--border);  
+      }  
+  
+      .nav-links.active {  
+        display: flex;  
+      }  
+  
+      .nav-links li {  
+        border-bottom: 1px solid var(--border);  
+      }  
+  
+      .nav-links a {  
+        display: block;  
+        padding: 16px 0;  
+      }  
+  
+      .nav-cta {  
+        display: inline-block !important;  
+        width: fit-content;  
+        padding: 10px 16px !important;  
+        margin: 10px 0;  
+      }  
+  
+      .nav-socials {  
+        justify-content: flex-start;  
+        gap: 10px;  
+        padding: 14px 0;  
+      }  
+  
+      .nav-socials a {  
+        width: 34px;  
+        height: 34px;  
+        font-size: 14px;  
+      }  
+  
+      .hero {  
+        padding-top: 115px;  
+        padding-bottom: 65px;  
+      }  
+  
+      .hero h1 {  
+        letter-spacing: -1.5px;  
+      }  
+  
+      .hero p {  
+        font-size: 14px;  
+      }  
+  
+      .logo-frame {  
+        width: min(350px, 90vw);  
+      }  
+  
+      .floating-card {  
+        padding: 10px 12px;  
+        font-size: 10px;  
+      }  
+  
+      .floating-card i {  
+        font-size: 16px;  
+      }  
+  
+      .float-one {  
+        left: -5px;  
+      }  
+  
+      .float-two {  
+        right: -5px;  
+      }  
+  
+      section {  
+        padding: 70px 0;  
+      }  
+  
+      .mission-grid,  
+      .courses-grid {  
+        grid-template-columns: 1fr;  
+      }  
+  
+      .resources-grid {  
+        grid-template-columns: repeat(2, 1fr);  
+      }  
+  
+      .resource-card {  
+        min-height: 270px;  
+        padding: 22px 14px;  
+      }  
+  
+      .resource-card h3 {  
+        font-size: 15px;  
+      }  
+  
+      .roadmap-item {  
+        gap: 15px;  
+      }  
+  
+      .roadmap-wrapper::before {  
+        left: 20px;  
+      }  
+  
+      .roadmap-number {  
+        width: 42px;  
+        height: 42px;  
+        font-size: 12px;  
+      }  
+  
+      .roadmap-content {  
+        padding: 18px;  
+      }  
+  
+      .social-box {  
+        padding: 45px 18px;  
+      }  
+  
+      .social-link {  
+        width: 100%;  
+        justify-content: center;  
+      }  
+  
+      .footer-top {  
+        flex-direction: column;  
+        align-items: flex-start;  
+      }  
+  
+      .footer-socials {  
+        justify-content: flex-start;  
+      }  
+    }  
+  
+    @media (max-width: 380px) {  
+      .brand-text {  
+        font-size: 13px;  
+      }  
+  
+      .brand img {  
+        width: 42px;  
+        height: 42px;  
+      }  
+  
+      .hero h1 {  
+        font-size: 38px;  
+      }  
+  
+      .hero-stats {  
+        gap: 18px;  
+      }  
+  
+      .resources-grid {  
+        grid-template-columns: 1fr;  
+      }  
+    }  
+  </style>  </head>  <body>    <div class="glow glow-1"></div>  
+  <div class="glow glow-2"></div>    <!-- NAVIGATION -->    <header>  
+    <div class="container navbar">  <a href="#home" class="brand">  
+    <img src="https://files.catbox.moe/ek7b9g.jpg" alt="Developers For ED Logo">  
+
+    <div class="brand-text">  
+      DEVELOPERS FOR ED  
+      <span>VISION 2030</span>  
+    </div>  
+  </a>  
+
+  <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">  
+    <i class="fa-solid fa-bars"></i>  
+  </button>  
+
+  <ul class="nav-links" id="navLinks">  
+    <li><a href="#home">Home</a></li>  
+    <li><a href="#mission">About</a></li>  
+    <li><a href="#learning">Courses</a></li>  
+    <li><a href="#roadmap">Roadmap</a></li>  
+    <li><a href="#resources">Learn Programming</a></li>  
+    <li><a href="#social">Social Media</a></li>  
+
+    <!-- Social icons in navigation -->  
+    <li class="nav-socials">  
+      <a  
+        class="facebook"  
+        href="https://www.facebook.com/profile.php?id=61574173235079"  
+        target="_blank"  
+        rel="noopener noreferrer"  
+        aria-label="Facebook"  
+        title="Facebook"  
+      >  
+        <i class="fa-brands fa-facebook-f"></i>  
+      </a>  
+
+      <a  
+        class="whatsapp"  
+        href="https://whatsapp.com/channel/0029Vb79rZA9mrGYIaF5273C"  
+        target="_blank"  
+        rel="noopener noreferrer"  
+        aria-label="WhatsApp Channel"  
+        title="WhatsApp Channel"  
+      >  
+        <i class="fa-brands fa-whatsapp"></i>  
+      </a>  
+
+      <a  
+        class="instagram"  
+        href="https://www.instagram.com/sancho_tech_zw?stkn=MWU4Ynlybnd1ZWIyOQ=="  
+        target="_blank"  
+        rel="noopener noreferrer"  
+        aria-label="Instagram"  
+        title="Instagram"  
+      >  
+        <i class="fa-brands fa-instagram"></i>  
+      </a>  
+
+      <a  
+        class="youtube"  
+        href="https://www.youtube.com/@SanchoTech"  
+        target="_blank"  
+        rel="noopener noreferrer"  
+        aria-label="YouTube"  
+        title="YouTube"  
+      >  
+        <i class="fa-brands fa-youtube"></i>  
+      </a>  
+
+      <a  
+        class="tiktok"  
+        href="https://www.tiktok.com/@sancho.tech.zw?_t=ZM-8v0aDyJMxXD&_r=1"  
+        target="_blank"  
+        rel="noopener noreferrer"  
+        aria-label="TikTok"  
+        title="TikTok"  
+      >  
+        <i class="fa-brands fa-tiktok"></i>  
+      </a>  
+    </li>  
+
+    <li>  
+      <a href="#resources" class="nav-cta">  
+        Start Learning <i class="fa-solid fa-arrow-right"></i>  
+      </a>  
+    </li>  
+  </ul>  
+
+</div>
+
+  </header>    <!-- HERO -->    <main>  <section class="hero" id="home">  
+  <div class="container hero-grid">  
+
+    <div class="hero-content reveal">  
+      <div class="eyebrow">  
+        <i class="fa-solid fa-code"></i>  
+        Technology • Innovation • Empowerment  
+      </div>  
+
+      <h1>  
+        Build the Future.<br>  
+        <span class="yellow">Learn.</span>  
+        <span class="blue">Innovate.</span><br>  
+        <span class="yellow">Empower.</span>  
+      </h1>  
+
+      <p>  
+        Welcome to <strong>Developers For ED</strong> — a technology-focused  
+        community dedicated to helping learners discover programming,  
+        develop digital skills, and contribute to a smarter Zimbabwe  
+        through technology.  
+      </p>  
+
+      <div class="hero-buttons">  
+        <a href="#resources" class="btn btn-primary">  
+          <i class="fa-solid fa-graduation-cap"></i>  
+          Explore Learning  
+        </a>  
+
+        <a href="#social" class="btn btn-outline">  
+          <i class="fa-solid fa-users"></i>  
+          Join Our Community  
+        </a>  
+      </div>  
+
+      <div class="hero-stats">  
+        <div class="stat">  
+          <strong>01</strong>  
+          <span>Learn</span>  
+        </div>  
+
+        <div class="stat">  
+          <strong>02</strong>  
+          <span>Build</span>  
+        </div>  
+
+        <div class="stat">  
+          <strong>03</strong>  
+          <span>Empower</span>  
+        </div>  
+      </div>  
+    </div>  
+
+    <div class="hero-visual reveal">  
+      <div class="logo-frame">  
+        <img src="https://files.catbox.moe/ek7b9g.jpg" alt="Developers For ED Vision 2030 Logo">  
+      </div>  
+
+      <div class="floating-card float-one">  
+        <i class="fa-solid fa-laptop-code"></i>  
+        <div>  
+          Learn Programming  
+          <small>Start from the basics</small>  
+        </div>  
+      </div>  
+
+      <div class="floating-card float-two">  
+        <i class="fa-solid fa-lightbulb"></i>  
+        <div>  
+          Build Solutions  
+          <small>Innovation for the future</small>  
+        </div>  
+      </div>  
+    </div>  
+
+  </div>  
+</section>  
+
+<!-- MISSION -->  
+<section class="mission" id="mission">  
+  <div class="container">  
+
+    <div class="section-heading reveal">  
+      <span class="section-tag">Our Purpose</span>  
+      <h2>Technology for a <span>Smarter Zimbabwe</span></h2>  
+      <p>  
+        We believe that access to programming knowledge, digital skills,  
+        and innovation can create opportunities for individuals and communities.  
+      </p>  
+    </div>  
+
+    <div class="mission-grid">  
+
+      <div class="mission-card reveal">  
+        <div class="mission-icon">  
+          <i class="fa-solid fa-book-open"></i>  
+        </div>  
+        <h3>Learn</h3>  
+        <p>  
+          Discover programming concepts, web development, software tools,  
+          and practical digital skills through structured learning.  
+        </p>  
+      </div>  
+
+      <div class="mission-card reveal">  
+        <div class="mission-icon">  
+          <i class="fa-solid fa-code"></i>  
+        </div>  
+        <h3>Build</h3>  
+        <p>  
+          Turn ideas into websites, applications, and technology projects  
+          that solve real-world problems.  
+        </p>  
+      </div>  
+
+      <div class="mission-card reveal">  
+        <div class="mission-icon">  
+          <i class="fa-solid fa-people-group"></i>  
+        </div>  
+        <h3>Empower</h3>  
+        <p>  
+          Share knowledge, encourage collaboration, and help more people  
+          participate in the digital economy.  
+        </p>  
+      </div>  
+
+    </div>  
+  </div>  
+</section>  
+
+<!-- COURSES -->  
+<section class="learning" id="learning">  
+  <div class="container">  
+
+    <div class="section-heading reveal">  
+      <span class="section-tag">Learning Hub</span>  
+      <h2>Start Your <span>Programming Journey</span></h2>  
+      <p>  
+        Explore learning paths designed for beginners, intermediate learners,  
+        and aspiring developers.  
+      </p>  
+    </div>  
+
+    <div class="course-filter reveal">  
+      <button class="filter-btn active" data-filter="all">All Courses</button>  
+      <button class="filter-btn" data-filter="beginner">Beginner</button>  
+      <button class="filter-btn" data-filter="web">Web Development</button>  
+      <button class="filter-btn" data-filter="advanced">Advanced</button>  
+    </div>  
+
+    <div class="courses-grid">  
+
+      <article class="course-card reveal" data-category="beginner">  
+        <div class="course-top">  
+          <i class="fa-brands fa-html5"></i>  
+          <span class="course-level">Beginner</span>  
+        </div>  
+
+        <div class="course-body">  
+          <h3>HTML & CSS Fundamentals</h3>  
+          <p>  
+            Learn how websites are structured and styled.  
+            Build your first responsive web page from scratch.  
+          </p>  
+
+          <div class="course-meta">  
+            <span><i class="fa-regular fa-clock"></i> Self-paced</span>  
+            <span><i class="fa-solid fa-layer-group"></i> Basics</span>  
+          </div>  
+
+          <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content"  
+             target="_blank"  
+             rel="noopener noreferrer"  
+             class="course-link">  
+            Start Learning <i class="fa-solid fa-arrow-right"></i>  
+          </a>  
+        </div>  
+      </article>  
+
+      <article class="course-card reveal" data-category="web">  
+        <div class="course-top">  
+          <i class="fa-brands fa-js"></i>  
+          <span class="course-level">Intermediate</span>  
+        </div>  
+
+        <div class="course-body">  
+          <h3>JavaScript Development</h3>  
+          <p>  
+            Learn variables, functions, DOM manipulation, events,  
+            and how to create interactive websites.  
+          </p>  
+
+          <div class="course-meta">  
+            <span><i class="fa-regular fa-clock"></i> Self-paced</span>  
+            <span><i class="fa-solid fa-layer-group"></i> Web</span>  
+          </div>  
+
+          <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting"  
+             target="_blank"  
+             rel="noopener noreferrer"  
+             class="course-link">  
+            Start Learning <i class="fa-solid fa-arrow-right"></i>  
+          </a>  
+        </div>  
+      </article>  
+
+      <article class="course-card reveal" data-category="beginner">  
+        <div class="course-top">  
+          <i class="fa-brands fa-python"></i>  
+          <span class="course-level">Beginner</span>  
+        </div>  
+
+        <div class="course-body">  
+          <h3>Python Programming</h3>  
+          <p>  
+            Understand programming logic, data types, loops,  
+            functions, and beginner-friendly projects.  
+          </p>  
+
+          <div class="course-meta">  
+            <span><i class="fa-regular fa-clock"></i> Self-paced</span>  
+            <span><i class="fa-solid fa-layer-group"></i> Coding</span>  
+          </div>  
+
+          <a href="https://docs.python.org/3/tutorial/"  
+             target="_blank"  
+             rel="noopener noreferrer"  
+             class="course-link">  
+            Start Learning <i class="fa-solid fa-arrow-right"></i>  
+          </a>  
+        </div>  
+      </article>  
+
+      <article class="course-card reveal" data-category="web">  
+        <div class="course-top">  
+          <i class="fa-brands fa-react"></i>  
+          <span class="course-level">Advanced</span>  
+        </div>  
+
+        <div class="course-body">  
+          <h3>Modern Web Apps</h3>  
+          <p>  
+            Explore component-based development, APIs, application  
+            architecture, and modern frontend workflows.  
+          </p>  
+
+          <div class="course-meta">  
+            <span><i class="fa-regular fa-clock"></i> Self-paced</span>  
+            <span><i class="fa-solid fa-layer-group"></i> Web</span>  
+          </div>  
+
+          <a href="https://react.dev/learn"  
+             target="_blank"  
+             rel="noopener noreferrer"  
+             class="course-link">  
+            Explore React <i class="fa-solid fa-arrow-right"></i>  
+          </a>  
+        </div>  
+      </article>  
+
+      <article class="course-card reveal" data-category="advanced">  
+        <div class="course-top">  
+          <i class="fa-solid fa-database"></i>  
+          <span class="course-level">Advanced</span>  
+        </div>  
+
+        <div class="course-body">  
+          <h3>Backend & APIs</h3>  
+          <p>  
+            Learn how servers, databases, authentication, and APIs  
+            work together to power applications.  
+          </p>  
+
+          <div class="course-meta">  
+            <span><i class="fa-regular fa-clock"></i> Self-paced</span>  
+            <span><i class="fa-solid fa-layer-group"></i> Backend</span>  
+          </div>  
+
+          <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side"  
+             target="_blank"  
+             rel="noopener noreferrer"  
+             class="course-link">  
+            Explore Backend <i class="fa-solid fa-arrow-right"></i>  
+          </a>  
+        </div>  
+      </article>  
+
+      <article class="course-card reveal" data-category="advanced">  
+        <div class="course-top">  
+          <i class="fa-solid fa-mobile-screen-button"></i>  
+          <span class="course-level">Advanced</span>  
+        </div>  
+
+        <div class="course-body">  
+          <h3>App Development</h3>  
+          <p>  
+            Explore mobile applications, user interfaces,  
+            and building digital products.  
+          </p>  
+
+          <div class="course-meta">  
+            <span><i class="fa-regular fa-clock"></i> Self-paced</span>  
+            <span><i class="fa-solid fa-layer-group"></i> Apps</span>  
+          </div>  
+
+          <a href="https://developer.android.com/courses"  
+             target="_blank"  
+             rel="noopener noreferrer"  
+             class="course-link">  
+            Explore App Development <i class="fa-solid fa-arrow-right"></i>  
+          </a>  
+        </div>  
+      </article>  
+
+    </div>  
+  </div>  
+</section>  
+
+<!-- ROADMAP -->  
+<section class="roadmap" id="roadmap">  
+  <div class="container">  
+
+    <div class="section-heading reveal">  
+      <span class="section-tag">Your Roadmap</span>  
+      <h2>From <span>Beginner</span> to Developer</h2>  
+      <p>  
+        Follow a practical learning journey and build your skills one step at a time.  
+      </p>  
+    </div>  
+
+    <div class="roadmap-wrapper">  
+
+      <div class="roadmap-item reveal">  
+        <div class="roadmap-number">01</div>  
+
+        <div class="roadmap-content">  
+          <h3>Learn the Fundamentals</h3>  
+          <p>  
+            Understand how computers, the internet, and programming work.  
+            Begin with HTML, CSS, and basic coding concepts.  
+          </p>  
+
+          <div class="roadmap-tags">  
+            <span>Computer Basics</span>  
+            <span>HTML</span>  
+            <span>CSS</span>  
+          </div>  
+        </div>  
+      </div>  
+
+      <div class="roadmap-item reveal">  
+        <div class="roadmap-number">02</div>  
+
+        <div class="roadmap-content">  
+          <h3>Choose a Programming Language</h3>  
+          <p>  
+            Practice problem-solving and learn a language such as Python  
+            or JavaScript through small projects.  
+          </p>  
+
+          <div class="roadmap-tags">  
+            <span>Python</span>  
+            <span>JavaScript</span>  
+            <span>Logic</span>  
+          </div>  
+        </div>  
+      </div>  
+
+      <div class="roadmap-item reveal">  
+        <div class="roadmap-number">03</div>  
+
+        <div class="roadmap-content">  
+          <h3>Build Real Projects</h3>  
+          <p>  
+            Create websites, portfolios, dashboards, and applications.  
+            Learn Git, debugging, and how to work with APIs.  
+          </p>  
+
+          <div class="roadmap-tags">  
+            <span>Projects</span>  
+            <span>Git & GitHub</span>  
+            <span>APIs</span>  
+          </div>  
+        </div>  
+      </div>  
+
+      <div class="roadmap-item reveal">  
+        <div class="roadmap-number">04</div>  
+
+        <div class="roadmap-content">  
+          <h3>Grow & Share Your Skills</h3>  
+          <p>  
+            Collaborate with others, contribute to open-source projects,  
+            and use technology to solve meaningful problems.  
+          </p>  
+
+          <div class="roadmap-tags">  
+            <span>Collaboration</span>  
+            <span>Innovation</span>  
+            <span>Community</span>  
+          </div>  
+        </div>  
+      </div>  
+
+    </div>  
+  </div>  
+</section>  
+
+<!-- DIRECT PROGRAMMING WEBSITES -->  
+<section class="resources" id="resources">  
+  <div class="container">  
+
+    <div class="section-heading reveal">  
+      <span class="section-tag">Learn Programming</span>  
+      <h2>All Programming Resources <span>In One Place</span></h2>  
+      <p>  
+        Click any card to open the learning website directly.  
+        Search for a programming language, technology, or learning platform.  
+      </p>  
+    </div>  
+
+    <div class="resource-tools reveal">  
+      <div class="resource-search">  
+        <i class="fa-solid fa-magnifying-glass"></i>  
+        <input  
+          type="search"  
+          id="resourceSearch"  
+          placeholder="Search Python, JavaScript, React, SQL..."  
+          aria-label="Search programming resources"  
+        >  
+      </div>  
+    </div>  
+
+    <div class="resources-grid" id="resourcesGrid">  
+
+      <!-- Learning Platforms -->  
+
+      <a href="https://www.freecodecamp.org/learn/"  
+         target="_blank"  
+         rel="noopener noreferrer"  
+         class="resource-card reveal"  
+         data-search="freecodecamp coding programming certificates web development">  
+        <i class="fa-solid fa-laptop-code"></i>  
+        <h3>freeCodeCamp</h3>  
+        <p>Free interactive coding lessons, projects, and certifications.</p>  
+        <span class="course-link">Visit Website <i class="fa-solid fa-arrow-up-right-from-square"></i></span>  
+      </a>  
+
+      <a href="https://www.w3schools.com/"  
+         target="_blank"  
+         rel="noopener noreferrer"  
+         class="resource-card reveal"  
+         data-search="w3schools html css javascript python sql">  
+        <i class="fa-solid fa-globe"></i>  
+        <h3>W3Schools</h3>  
+        <p>Learn HTML, CSS, JavaScript, Python, SQL, and many other technologies.</p>  
+        <span class="course-link">Visit Website <i class="fa-solid fa-arrow-up-right-from-square"></i></span>  
+      </a>  
+
+      <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development"  
+         target="_blank"  
+         rel="noopener noreferrer"  
+         class="resource-card reveal"  
+         data-search="mdn web docs html css javascript web development">  
+        <i class="fa-brands fa-firefox-browser"></i>  
+        <h3>MDN Web Docs</h3>  
+        <p>Official web development documentation for HTML, CSS, and JavaScript.</p>  
+        <span class="course-link">Visit Website <i class="fa-solid fa-arrow-up-right-from-square"></i></span>  
+      </a>  
+
+      <a href="https://www.theodinproject.com/paths"  
+         target="_blank"  
+         rel="noopener noreferrer"  
+         class="resource-card reveal"  
+         data-search="odin project full stack web development">  
+        <i class="fa-solid fa-code"></i>  
+        <h3>The Odin Project</h3>  
+        <p>Free full-stack web development curriculum with practical projects.</p>  
+        <span class="course-link">Visit Website <i class="fa-solid fa-arrow-up-right-from-square"></i></span>  
+      </a>  
+
+      <a href="https://www.codecademy.com/catalog"  
+         target="_blank"  
+         rel="noopener noreferrer"  
+         class="resource-card reveal"  
+         data-search="codecademy interactive coding courses">  
+        <i class="fa-solid fa-terminal"></i>  
+        <h3>Codecademy</h3>  
+        <p>Interactive programming lessons and exercises for different skill levels.</p>  
+        <span class="course-link">Visit Website <i class="fa-solid fa-arrow-up-right-from-square"></i></span>  
+      </a>  
+
+      <a href="https://cs50.harvard.edu/x/"  
+         target="_blank"  
+         rel="noopener noreferrer"  
+         class="resource-card reveal"  
+         data-search="harvard cs50 computer science c python sql">  
+        <i class="fa-solid fa-university"></i>  
+        <h3>Harvard CS50</h3>  
+        <p>Learn computer science, algorithms, C, Python, SQL, and web development.</p>  
+        <span class="course-link">Visit Website <i class="fa-solid fa-arrow-up-right-from-square"></i></span>  
+      </a>  
+
+      <a href="https://www.codechef.com/learn/"  
+         target="_blank"  
+         rel="noopener noreferrer"  
+         class="resource-card reveal"  
+         data-search="codechef programming practice algorithms">  
+        <i class="fa-solid fa-laptop"></i>  
+        <h3>CodeChef Learn</h3>  
+        <p>Learn programming, problem-solving, algorithms, and competitive coding.</p>  
+        <span class="course-link">Visit Website <i class="fa-solid fa-arrow-up-right-from-square"></i></span>  
+      </a>  
+
+      <a href="https://exercism.org/tracks"  
+         target="_blank"  
+         rel="noopener noreferrer"  
+         class="resource-card reveal"  
+         data-search="exercism programming practice coding exercises">  
+        <i class="fa-solid fa-puzzle-piece"></i>  
+        <h3>Exercism</h3>  
+        <p>Improve your programming skills through exercises and mentoring.</p>  
+        <span class="course-link">Visit Website <i class="fa-solid fa-arrow-up-right-from-square"></i></span>  
+      </a>  
+
+      <a href="https://skills.github.com/"  
+         target="_blank"  
+         rel="noopener noreferrer"  
+         class="resource-card reveal"  
+         data-search="github skills git github actions development">  
+        <i class="fa-brands fa-github"></i>  
+        <h3>GitHub Skills</h3>  
+        <p>Learn GitHub, version control, collaboration, and developer workflows.</p>  
+        <span class="course-link">Visit Website <i class="fa-solid fa-arrow-up-right-from-square"></i></span>  
+      </a>  
+
+      <a href="https://ocw.mit.edu/search/?q=computer+science"  
+         target="_blank"  
+         rel="noopener noreferrer"  
+         class="resource-card reveal"  
+         data-search="mit open courseware computer science university">  
+        <i class="fa-solid fa-graduation-cap"></i>  
+        <h3>MIT OpenCourseWare</h3>  
+        <p>Access university-level computer science courses and study materials.</p>  
+        <span class="course-link">Visit Website <i class="fa-solid fa-arrow-up-right-from-square"></i></span>  
+      </a>  
+
+      <a href="https://developers.google.com/"  
+         target="_blank"  
+         rel="noopener noreferrer"  
+         class="resource-card reveal"  
+         data-search="google developers android cloud web api">  
+        <i class="fa-brands fa-google"></i>  
+        <h3>Google Developers</h3>  
+        <p>Explore Android, cloud, APIs, web development, and developer tools.</p>  
+        <span class="course-link">Visit Website <i class="fa-solid fa-arrow-up-right-from-square"></i></span>  
+      </a>  
+
+      <!-- Programming Languages -->  
+
+      <a href="https://docs.python.org/3/tutorial/"  
+         target="_blank"  
+         rel="noopener noreferrer"  
+         class="resource-card reveal"  
+         data-search="python programming language">  
+        <i class="fa-brands fa-python"></i>  
+        <h3>Python</h3>  
+        <p>Official Python tutorial covering syntax, functions, loops, and modules.</p>  
+        <span class="course-link">Learn Python <i class="fa-solid fa-arrow-up-right-from-square"></i></span>  
+      </a>  
+
+      <a href="https://javascript.info/"  
+         target="_blank"  
+         rel="noopener noreferrer"  
+         class="resource-card reveal"  
+         data-search="javascript js programming language">  
+        <i class="fa-brands fa-js"></i>  
+        <h3>JavaScript</h3>  
+        <p>Learn JavaScript from beginner concepts to advanced browser programming.</p>  
+        <span class="course-link">Learn JavaScript <i class="fa-solid fa-arrow-up-right-from-square"></i></span>  
+      </a>  
+
+      <a href="https://dev.java/learn/"  
+         target="_blank"  
+         rel="noopener noreferrer"  
+         class="resource-card reveal"  
+         data-search="java programming language">  
+        <i class="fa-brands fa-java"></i>  
+        <h3>Java</h3>  
+        <p>Explore Java programming, object-oriented concepts, and application development.</p>  
+        <span class="course-link">Learn Java <i class="fa-solid fa-arrow-up-right-from-square"></i></span>  
+      </a>  
+
+      <a href="https://www.learn-c.org/"  
+         target="_blank"  
+         rel="noopener noreferrer"  
+         class="resource-card reveal"  
+         data-search="c programming language">  
+        <i class="fa-solid fa-c"></i>  
+        <h3>C Programming</h3>  
+        <p>Practice C programming fundamentals through interactive examples.</p>  
+        <span class="course-link">Learn C <i class="fa-solid fa-arrow-up-right-from-square"></i></span>  
+      </a>  
+
+      <a href="https://www.learncpp.com/"  
+         target="_blank"  
+         rel="noopener noreferrer"  
+         class="resource-card reveal"  
+         data-search="c++ cpp programming language">  
+        <i class="fa-solid fa-code"></i>  
+        <h3>C++</h3>  
+        <p>Learn modern C++ programming, classes, memory, and object-oriented design.</p>  
+        <span class="course-link">Learn C++ <i class="fa-solid fa-arrow-up-right-from-square"></i></span>  
+      </a>  
+
+      <a href="https://learn.microsoft.com/en-us/dotnet/csharp/"  
+         target="_blank"  
+         rel="noopener noreferrer"  
+         class="resource-card reveal"  
+         data-search="c sharp c# microsoft dotnet">  
+        <i class="fa-solid fa-hashtag"></i>  
+        <h3>C#</h3>  
+        <p>Learn C# programming and the .NET development platform.</p>  
+        <span class="course-link">Learn C# <i class="fa-solid fa-arrow-up-right-from-square"></i></span>  
+      </a>  
+
+      <a href="https://go.dev/learn/"  
+         target="_blank"  
+         rel="noopener noreferrer"  
+         class="resource-card reveal"  
+         data-search="golang go programming">  
+        <i class="fa-solid fa-code"></i>  
+        <h3>Go</h3>  
+        <p>Learn Go programming for backend systems, APIs, and scalable software.</p>  
+        <span class="course-link">Learn Go <i class="fa-solid fa-arrow-up-right-from-square"></i></span>  
+      </a>  
+
+      <a href="https://doc.rust-lang.org/book/"  
+         target="_blank"  
+         rel="noopener noreferrer"  
+         class="resource-card reveal"  
+         data-search="rust programming language">  
+        <i class="fa-solid fa-gears"></i>  
+        <h3>Rust</h3>  
+        <p>Study Rust programming, ownership, memory safety, and systems development.</p>  
+        <span class="course-link">Learn Rust <i class="fa-solid fa-arrow-up-right-from-square"></i></span>  
+      </a>  
+
+      <a href="https://www.ruby-lang.org/en/documentation/quickstart/"  
+         target="_blank"  
+         rel="noopener noreferrer"  
+         class="resource-card reveal"  
+         data-search="ruby programming language">  
+        <i class="fa-solid fa-gem"></i>  
+        <h3>Ruby</h3>  
+        <p>Learn Ruby syntax, object-oriented programming, and scripting.</p>  
+        <span class="course-link">Learn Ruby <i class="fa-solid fa-arrow-up-right-from-square"></i></span>  
+      </a>  
+
+      <a href="https://kotlinlang.org/docs/getting-started.html"  
+         target="_blank"  
+         rel="noopener noreferrer"  
+         class="resource-card reveal"  
+         data-search="kotlin android programming">  
+        <i class="fa-solid fa-mobile-screen"></i>  
+        <h3>Kotlin</h3>  
+        <p>Learn Kotlin for Android development and modern applications.</p>  
+        <span class="course-link">Learn Kotlin <i class="fa-solid fa-arrow-up-right-from-square"></i></span>  
+      </a>  
+
+      <a href="https://docs.swift.org/swift-book/documentation/the-swift-programming-language/"  
+         target="_blank"  
+         rel="noopener noreferrer"  
+         class="resource-card reveal"  
+         data-search="swift ios apple programming">  
+        <i class="fa-brands fa-swift"></i>  
+        <h3>Swift</h3>  
+        <p>Learn Swift programming for iOS, macOS, and Apple platforms.</p>  
+        <span class="course-link">Learn Swift <i class="fa-solid fa-arrow-up-right-from-square"></i></span>  
+      </a>  
+
+      <a href="https://dart.dev/learn"  
+         target="_blank"  
+         rel="noopener noreferrer"  
+         class="resource-card reveal"  
+         data-search="dart flutter programming">  
+        <i class="fa-solid fa-code"></i>  
+        <h3>Dart</h3>  
+        <p>Learn Dart programming for Flutter and cross-platform applications.</p>  
+        <span class="course-link">Learn Dart <i class="fa-solid fa-arrow-up-right-from-square"></i></span>  
+      </a>  
+
+      <!-- Web Development -->  
+
+      <a href="https://react.dev/learn"  
+         target="_blank"  
+         rel="noopener noreferrer"  
+         class="resource-card reveal"  
+         data-search="react javascript frontend web development">  
+        <i class="fa-brands fa-react"></i>  
+        <h3>React</h3>  
+        <p>Build modern component-based web interfaces using React.</p>  
+        <span class="course-link">Learn React <i class="fa-solid fa-arrow-up-right-from-square"></i></span>  
+      </a>  
+
+      <a href="https://vuejs.org/guide/introduction.html"  
+         target="_blank"  
+         rel="noopener noreferrer"  
+         class="resource-card reveal"  
+         data-search="vue vuejs frontend web development">  
+        <i class="fa-brands fa-vuejs"></i>  
+        <h3>Vue.js</h3>  
+        <p>Learn Vue for building interactive and modern web applications.</p>  
+        <span class="course-link">Learn Vue <i class="fa-solid fa-arrow-up-right-from-square"></i></span>  
+      </a>  
+
+      <a href="https://angular.dev/overview"  
+         target="_blank"  
+         rel="noopener noreferrer"  
+         class="resource-card reveal"  
+         data-search="angular typescript frontend web development">  
+        <i class="fa-brands fa-angular"></i>  
+        <h3>Angular</h3>  
+        <p>Explore Angular for structured, scalable frontend applications.</p>  
+        <span class="course-link">Learn Angular <i class="fa-solid fa-arrow-up-right-from-square"></i></span>  
+      </a>  
+
+      <a href="https://nodejs.org/en/learn"  
+         target="_blank"  
+         rel="noopener noreferrer"  
+         class="resource-card reveal"  
+         data-search="node nodejs backend javascript server">  
+        <i class="fa-brands fa-node-js"></i>  
+        <h3>Node.js</h3>  
+        <p>Learn server-side JavaScript, APIs, and backend development.</p>  
+        <span class="course-link">Learn Node.js <i class="fa-solid fa-arrow-up-right-from-square"></i></span>  
+      </a>  
+
+      <a href="https://www.typescriptlang.org/docs/"  
+         target="_blank"  
+         rel="noopener noreferrer"  
+         class="resource-card reveal"  
+         data-search="typescript javascript programming">  
+        <i class="fa-solid fa-code"></i>  
+        <h3>TypeScript</h3>  
+        <p>Learn typed JavaScript for reliable and scalable applications.</p>  
+        <span class="course-link">Learn TypeScript <i class="fa-solid fa-arrow-up-right-from-square"></i></span>  
+      </a>  
+
+      <!-- Databases -->  
+
+      <a href="https://www.w3schools.com/sql/"  
+         target="_blank"  
+         rel="noopener noreferrer"  
+         class="resource-card reveal"  
+         data-search="sql database programming">  
+        <i class="fa-solid fa-database"></i>  
+        <h3>SQL</h3>  
+        <p>Learn database queries, tables, joins, filtering, and data management.</p>  
+        <span class="course-link">Learn SQL <i class="fa-solid fa-arrow-up-right-from-square"></i></span>  
+      </a>  
+
+      <a href="https://dev.mysql.com/doc/"  
+         target="_blank"  
+         rel="noopener noreferrer"  
+         class="resource-card reveal"  
+         data-search="mysql database sql">  
+        <i class="fa-solid fa-database"></i>  
+        <h3>MySQL</h3>  
+        <p>Explore MySQL documentation and relational database development.</p>  
+        <span class="course-link">Learn MySQL <i class="fa-solid fa-arrow-up-right-from-square"></i></span>  
+      </a>  
+
+      <a href="https://www.postgresql.org/docs/"  
+         target="_blank"  
+         rel="noopener noreferrer"  
+         class="resource-card reveal"  
+         data-search="postgresql postgres database sql">  
+        <i class="fa-solid fa-server"></i>  
+        <h3>PostgreSQL</h3>  
+        <p>Learn PostgreSQL, advanced SQL, database design, and administration.</p>  
+        <span class="course-link">Learn PostgreSQL <i class="fa-solid fa-arrow-up-right-from-square"></i></span>  
+      </a>  
+
+      <a href="https://learn.mongodb.com/"  
+         target="_blank"  
+         rel="noopener noreferrer"  
+         class="resource-card reveal"  
+         data-search="mongodb nosql database">  
+        <i class="fa-solid fa-leaf"></i>  
+        <h3>MongoDB</h3>  
+        <p>Learn NoSQL databases, collections, documents, and data modeling.</p>  
+        <span class="course-link">Learn MongoDB <i class="fa-solid fa-arrow-up-right-from-square"></i></span>  
+      </a>  
+
+      <a href="https://firebase.google.com/docs"  
+         target="_blank"  
+         rel="noopener noreferrer"  
+         class="resource-card reveal"  
+         data-search="firebase google backend database authentication">  
+        <i class="fa-solid fa-fire"></i>  
+        <h3>Firebase</h3>  
+        <p>Explore authentication, databases, hosting, storage, and app services.</p>  
+        <span class="course-link">Learn Firebase <i class="fa-solid fa-arrow-up-right-from-square"></i></span>  
+      </a>  
+
+      <!-- Mobile Development -->  
+
+      <a href="https://developer.android.com/courses"  
+         target="_blank"  
+         rel="noopener noreferrer"  
+         class="resource-card reveal"  
+         data-search="android mobile app development java kotlin">  
+        <i class="fa-brands fa-android"></i>  
+        <h3>Android Development</h3>  
+        <p>Learn how to create Android applications using Kotlin and Android Studio.</p>  
+        <span class="course-link">Learn Android <i class="fa-solid fa-arrow-up-right-from-square"></i></span>  
+      </a>  
+
+      <a href="https://docs.flutter.dev/get-started/learn-flutter"  
+         target="_blank"  
+         rel="noopener noreferrer"  
+         class="resource-card reveal"  
+         data-search="flutter dart mobile cross platform">  
+        <i class="fa-solid fa-mobile-screen-button"></i>  
+        <h3>Flutter</h3>  
+        <p>Build cross-platform mobile, web, and desktop applications.</p>  
+        <span class="course-link">Learn Flutter <i class="fa-solid fa-arrow-up-right-from-square"></i></span>  
+      </a>  
+
+      <a href="https://reactnative.dev/docs/getting-started"  
+         target="_blank"  
+         rel="noopener noreferrer"  
+         class="resource-card reveal"  
+         data-search="react native mobile app javascript">  
+        <i class="fa-brands fa-react"></i>  
+        <h3>React Native</h3>  
+        <p>Create mobile applications using JavaScript and React.</p>  
+        <span class="course-link">Learn React Native <i class="fa-solid fa-arrow-up-right-from-square"></i></span>  
+      </a>  
+
+      <a href="https://developer.apple.com/tutorials/swiftui"  
+         target="_blank"  
+         rel="noopener noreferrer"  
+         class="resource-card reveal"  
+         data-search="swiftui ios apple mobile development">  
+        <i class="fa-brands fa-apple"></i>  
+        <h3>SwiftUI</h3>  
+        <p>Build Apple platform interfaces with SwiftUI and Swift.</p>  
+        <span class="course-link">Learn SwiftUI <i class="fa-solid fa-arrow-up-right-from-square"></i></span>  
+      </a>  
+
+      <!-- Data Science and AI -->  
+
+      <a href="https://www.kaggle.com/learn"  
+         target="_blank"  
+         rel="noopener noreferrer"  
+         class="resource-card reveal"  
+         data-search="kaggle data science machine learning python">  
+        <i class="fa-solid fa-chart-line"></i>  
+        <h3>Kaggle Learn</h3>  
+        <p>Study Python, data science, machine learning, and practical datasets.</p>  
+        <span class="course-link">Learn Data Science <i class="fa-solid fa-arrow-up-right-from-square"></i></span>  
+      </a>  
+
+      <a href="https://numpy.org/learn/"  
+         target="_blank"  
+         rel="noopener noreferrer"  
+         class="resource-card reveal"  
+         data-search="numpy python data science">  
+        <i class="fa-solid fa-calculator"></i>  
+        <h3>NumPy</h3>  
+        <p>Learn numerical computing and scientific programming with Python.</p>  
+        <span class="course-link">Learn NumPy <i class="fa-solid fa-arrow-up-right-from-square"></i></span>  
+      </a>  
+
+      <a href="https://pandas.pydata.org/docs/getting_started/intro_tutorials/"  
+         target="_blank"  
+         rel="noopener noreferrer"  
+         class="resource-card reveal"  
+         data-search="pandas python data analysis">  
+        <i class="fa-solid fa-table"></i>  
+        <h3>pandas</h3>  
+        <p>Learn data analysis, data cleaning, and data manipulation with Python.</p>  
+        <span class="course-link">Learn pandas <i class="fa-solid fa-arrow-up-right-from-square"></i></span>  
+      </a>  
+
+      <a href="https://developers.google.com/machine-learning/crash-course"  
+         target="_blank"  
+         rel="noopener noreferrer"  
+         class="resource-card reveal"  
+         data-search="google machine learning artificial intelligence ai">  
+        <i class="fa-solid fa-brain"></i>  
+        <h3>Google ML Crash Course</h3>  
+        <p>Learn machine learning concepts, models, and practical techniques.</p>  
+        <span class="course-link">Learn Machine Learning <i class="fa-solid fa-arrow-up-right-from-square"></i></span>  
+      </a>  
+
+      <a href="https://www.deeplearning.ai/courses/"  
+         target="_blank"  
+         rel="noopener noreferrer"  
+         class="resource-card reveal"  
+         data-search="deep learning artificial intelligence ai">  
+        <i class="fa-solid fa-robot"></i>  
+        <h3>DeepLearning.AI</h3>  
+        <p>Explore deep learning, generative AI, neural networks, and AI courses.</p>  
+        <span class="course-link">Learn AI <i class="fa-solid fa-arrow-up-right-from-square"></i></span>  
+      </a>  
+
+      <!-- Tools and DevOps -->  
+
+      <a href="https://git-scm.com/book/en/v2"  
+         target="_blank"  
+         rel="noopener noreferrer"  
+         class="resource-card reveal"  
+         data-search="git version control programming">  
+        <i class="fa-brands fa-git-alt"></i>  
+        <h3>Git</h3>  
+        <p>Learn version control, commits, branches, merging, and collaboration.</p>  
+        <span class="course-link">Learn Git <i class="fa-solid fa-arrow-up-right-from-square"></i></span>  
+      </a>  
+
+      <a href="https://docs.docker.com/get-started/"  
+         target="_blank"  
+         rel="noopener noreferrer"  
+         class="resource-card reveal"  
+         data-search="docker containers devops">  
+        <i class="fa-brands fa-docker"></i>  
+        <h3>Docker</h3>  
+        <p>Learn containers, images, deployment, and modern development workflows.</p>  
+        <span class="course-link">Learn Docker <i class="fa-solid fa-arrow-up-right-from-square"></i></span>  
+      </a>  
+
+      <a href="https://training.linuxfoundation.org/training/introduction-to-linux/"  
+         target="_blank"  
+         rel="noopener noreferrer"  
+         class="resource-card reveal"  
+         data-search="linux operating system command line">  
+        <i class="fa-brands fa-linux"></i>  
+        <h3>Linux</h3>  
+        <p>Learn Linux commands, terminals, filesystems, and server basics.</p>  
+        <span class="course-link">Learn Linux <i class="fa-solid fa-arrow-up-right-from-square"></i></span>  
+      </a>  
+
+      <!-- Algorithms and Cybersecurity -->  
+
+      <a href="https://www.geeksforgeeks.org/dsa/dsa-tutorial/"  
+         target="_blank"  
+         rel="noopener noreferrer"  
+         class="resource-card reveal"  
+         data-search="data structures algorithms dsa coding">  
+        <i class="fa-solid fa-diagram-project"></i>  
+        <h3>Data Structures & Algorithms</h3>  
+        <p>Practice arrays, linked lists, trees, graphs, sorting, and searching.</p>  
+        <span class="course-link">Learn DSA <i class="fa-solid fa-arrow-up-right-from-square"></i></span>  
+      </a>  
+
+      <a href="https://portswigger.net/web-security"  
+         target="_blank"  
+         rel="noopener noreferrer"  
+         class="resource-card reveal"  
+         data-search="cybersecurity web security ethical hacking">  
+        <i class="fa-solid fa-shield-halved"></i>  
+        <h3>PortSwigger Web Security</h3>  
+        <p>Learn web security, vulnerabilities, testing, and cybersecurity concepts.</p>  
+        <span class="course-link">Learn Cybersecurity <i class="fa-solid fa-arrow-up-right-from-square"></i></span>  
+      </a>  
+
+      <a href="https://www.cisco.com/c/en/us/solutions/enterprise-networks/what-is-computer-networking.html"  
+         target="_blank"  
+         rel="noopener noreferrer"  
+         class="resource-card reveal"  
+         data-search="computer networking networks cisco">  
+        <i class="fa-solid fa-network-wired"></i>  
+        <h3>Computer Networking</h3>  
+        <p>Understand networks, protocols, routers, servers, and internet infrastructure.</p>  
+        <span class="course-link">Learn Networking <i class="fa-solid fa-arrow-up-right-from-square"></i></span>  
+      </a>  
+
+    </div>  
+
+    <div class="resource-empty" id="resourceEmpty">  
+      No matching programming resource found.  
+    </div>  
+
+  </div>  
+</section>  
+
+<!-- SOCIAL MEDIA -->  
+<section class="social" id="social">  
+  <div class="container">  
+
+    <div class="social-box reveal">  
+      <span class="section-tag">Stay Connected</span>  
+
+      <h2>Join the <span>Developers For ED</span> Community</h2>  
+
+      <p>  
+        Follow our social platforms for technology updates, programming  
+        content, learning opportunities, and community activities.  
+      </p>  
+
+      <div class="social-links">  
+
+        <a  
+          class="social-link facebook"  
+          href="https://www.facebook.com/profile.php?id=61574173235079"  
+          target="_blank"  
+          rel="noopener noreferrer"  
+          aria-label="Facebook"  
+        >  
+          <i class="fa-brands fa-facebook-f"></i>  
+          Facebook  
+        </a>  
+
+        <a  
+          class="social-link whatsapp"  
+          href="https://whatsapp.com/channel/0029Vb79zRA9mrGYIaF5273C"  
+          target="_blank"  
+          rel="noopener noreferrer"  
+          aria-label="WhatsApp Channel"  
+        >  
+          <i class="fa-brands fa-whatsapp"></i>  
+          WhatsApp Channel  
+        </a>  
+
+        <a  
+          class="social-link instagram"  
+          href="https://www.instagram.com/sancho_tech_zw?stkn=MWU4Ynlybnd1ZWIyOQ=="  
+          target="_blank"  
+          rel="noopener noreferrer"  
+          aria-label="Instagram"  
+        >  
+          <i class="fa-brands fa-instagram"></i>  
+          Instagram  
+        </a>  
+
+        <a  
+          class="social-link youtube"  
+          href="https://www.youtube.com/@SanchoTech"  
+          target="_blank"  
+          rel="noopener noreferrer"  
+          aria-label="YouTube"  
+        >  
+          <i class="fa-brands fa-youtube"></i>  
+          YouTube  
+        </a>  
+
+        <a  
+          class="social-link tiktok"  
+          href="https://www.tiktok.com/@sancho.tech.zw?_t=ZM-8v0aDyJMxXD&_r=1"  
+          target="_blank"  
+          rel="noopener noreferrer"  
+          aria-label="TikTok"  
+        >  
+          <i class="fa-brands fa-tiktok"></i>  
+          TikTok  
+        </a>  
+
+      </div>  
+    </div>  
+
+  </div>  
+</section>
+
+  </main>    <!-- FOOTER -->    <footer>  
+    <div class="container">  <div class="footer-top">  
+
+    <a href="#home" class="footer-brand">  
+      <img src="1000941760.png" alt="Developers For ED Logo">  
+
+      <div>  
+        <h3>Developers For ED</h3>  
+        <p>VISION 2030 • TECHNOLOGY • INNOVATION</p>  
+      </div>  
+    </a>  
+
+    <div class="footer-links">  
+      <a href="#home">Home</a>  
+      <a href="#mission">About</a>  
+      <a href="#learning">Courses</a>  
+      <a href="#roadmap">Roadmap</a>  
+      <a href="#resources">Learn Programming</a>  
+      <a href="#social">Social Media</a>  
+    </div>  
+
+  </div>  
+
+  <!-- Social icons in footer -->  
+  <div class="footer-socials">  
+
+    <a  
+      class="facebook"  
+      href="https://www.facebook.com/profile.php?id=61574173235079"  
+      target="_blank"  
+      rel="noopener noreferrer"  
+      aria-label="Facebook"  
+      title="Facebook"  
+    >  
+      <i class="fa-brands fa-facebook-f"></i>  
+    </a>  
+
+    <a  
+      class="whatsapp"  
+      href="https://whatsapp.com/channel/0029Vb79zRA9mrGYIaF5273C"  
+      target="_blank"  
+      rel="noopener noreferrer"  
+      aria-label="WhatsApp Channel"  
+      title="WhatsApp Channel"  
+    >  
+      <i class="fa-brands fa-whatsapp"></i>  
+    </a>  
+
+    <a  
+      class="instagram"  
+      href="https://www.instagram.com/sancho_tech_zw?stkn=MWU4Ynlybnd1ZWIyOQ=="  
+      target="_blank"  
+      rel="noopener noreferrer"  
+      aria-label="Instagram"  
+      title="Instagram"  
+    >  
+      <i class="fa-brands fa-instagram"></i>  
+    </a>  
+
+    <a  
+      class="youtube"  
+      href="https://www.youtube.com/@SanchoTech"  
+      target="_blank"  
+      rel="noopener noreferrer"  
+      aria-label="YouTube"  
+      title="YouTube"  
+    >  
+      <i class="fa-brands fa-youtube"></i>  
+    </a>  
+
+    <a  
+      class="tiktok"  
+      href="https://www.tiktok.com/@sancho.tech.zw?_t=ZM-8v0aDyJMxXD&_r=1"  
+      target="_blank"  
+      rel="noopener noreferrer"  
+      aria-label="TikTok"  
+      title="TikTok"  
+    >  
+      <i class="fa-brands fa-tiktok"></i>  
+    </a>  
+
+  </div>  
+
+  <div class="footer-bottom">  
+    <span>  
+      © <span id="year"></span> Developers For ED. All rights reserved.  
+    </span>  
+
+    <span class="developer-credit">  
+      Developed by Sancho Tech  
+    </span>  
+
+    <a href="#home" class="back-top" aria-label="Back to top">  
+      <i class="fa-solid fa-arrow-up"></i>  
+    </a>  
+  </div>  
+
+</div>
+
+  </footer>    <script>  
+    // Mobile navigation  
+    const menuBtn = document.getElementById("menuBtn");  
+    const navLinks = document.getElementById("navLinks");  
+  
+    menuBtn.addEventListener("click", () => {  
+      const isActive = navLinks.classList.toggle("active");  
+  
+      menuBtn.setAttribute("aria-expanded", isActive ? "true" : "false");  
+  
+      const icon = menuBtn.querySelector("i");  
+      icon.classList.toggle("fa-bars", !isActive);  
+      icon.classList.toggle("fa-xmark", isActive);  
+    });  
+  
+    // Close mobile menu after clicking a navigation link  
+    document.querySelectorAll(".nav-links a").forEach(link => {  
+      link.addEventListener("click", () => {  
+        navLinks.classList.remove("active");  
+        menuBtn.setAttribute("aria-expanded", "false");  
+  
+        const icon = menuBtn.querySelector("i");  
+        icon.classList.add("fa-bars");  
+        icon.classList.remove("fa-xmark");  
+      });  
+    });  
+  
+    // Course filtering  
+    const filterButtons = document.querySelectorAll(".filter-btn");  
+    const courseCards = document.querySelectorAll(".course-card");  
+  
+    filterButtons.forEach(button => {  
+      button.addEventListener("click", () => {  
+        filterButtons.forEach(btn => btn.classList.remove("active"));  
+        button.classList.add("active");  
+  
+        const filter = button.dataset.filter;  
+  
+        courseCards.forEach(card => {  
+          const category = card.dataset.category;  
+  
+          if (filter === "all" || category === filter) {  
+            card.classList.remove("hidden");  
+          } else {  
+            card.classList.add("hidden");  
+          }  
+        });  
+      });  
+    });  
+  
+    // Programming resources search  
+    const resourceSearch = document.getElementById("resourceSearch");  
+    const resourceCards = document.querySelectorAll(".resource-card");  
+    const resourceEmpty = document.getElementById("resourceEmpty");  
+  
+    resourceSearch.addEventListener("input", () => {  
+      const searchTerm = resourceSearch.value.toLowerCase().trim();  
+      let visibleCount = 0;  
+  
+      resourceCards.forEach(card => {  
+        const searchableText = (  
+          card.innerText + " " + card.dataset.search  
+        ).toLowerCase();  
+  
+        if (searchableText.includes(searchTerm)) {  
+          card.classList.remove("hidden");  
+          visibleCount++;  
+        } else {  
+          card.classList.add("hidden");  
+        }  
+      });  
+  
+      resourceEmpty.style.display = visibleCount === 0 ? "block" : "none";  
+    });  
+  
+    // Scroll reveal animation  
+    const revealElements = document.querySelectorAll(".reveal");  
+  
+    const observer = new IntersectionObserver((entries) => {  
+      entries.forEach(entry => {  
+        if (entry.isIntersecting) {  
+          entry.target.classList.add("show");  
+          observer.unobserve(entry.target);  
+        }  
+      });  
+    }, {  
+      threshold: 0.12  
+    });  
+  
+    revealElements.forEach(element => observer.observe(element));  
+  
+    // Current year  
+    document.getElementById("year").textContent = new Date().getFullYear();  
+  </script>  </body>  
+</html>  
